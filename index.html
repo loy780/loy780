@@ -18,4 +18,55 @@
       background: #fff;
       padding: 30px;
       border-radius: 12px;
-      box-shadow:
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #0066cc;
+    }
+    .lang-switch {
+      margin-top: 20px;
+    }
+    button {
+      margin: 5px;
+      padding: 8px 16px;
+      border: none;
+      background-color: #0066cc;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">LOY - The Future of Digital Currency</h1>
+    <p id="desc">
+      LOY is a community-driven cryptocurrency designed for secure, fast, and borderless transactions.
+    </p>
+
+    <div class="lang-switch">
+      <button onclick="setLang('en')">English</button>
+      <button onclick="setLang('ar')">العربية</button>
+    </div>
+  </div>
+
+  <script>
+    const content = {
+      en: {
+        title: "LOY - The Future of Digital Currency",
+        desc: "LOY is a community-driven cryptocurrency designed for secure, fast, and borderless transactions."
+      },
+      ar: {
+        title: "عملة LOY - مستقبل العملات الرقمية",
+        desc: "عملة LOY هي عملة مشفرة يقودها المجتمع، مصممة لتوفير معاملات آمنة وسريعة وعابرة للحدود."
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById('title').innerText = content[lang].title;
+      document.getElementById('desc').innerText = content[lang].desc;
+      document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    }
+  </script>
+</body>
+</html>
