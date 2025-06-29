@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>💠 LOY - Smart Future Currency</title>
+  <title>💠 LOY - Smart AI Currency</title>
   <style>
     body, html {
       margin: 0;
       padding: 0;
       height: 100%;
       font-family: 'Segoe UI', sans-serif;
-      color: white;
-      position: relative;
+      color: #000;
+      background: #f5f7fa;
       overflow: hidden;
     }
 
-    /* خلفية الفيديو */
     .video-bg {
       position: fixed;
       top: 0; left: 0;
@@ -23,9 +22,9 @@
       height: 100vh;
       object-fit: cover;
       z-index: -1;
+      opacity: 0.4;
     }
 
-    /* شعار العملة كعلامة مائية */
     .watermark {
       position: fixed;
       top: 50%;
@@ -34,6 +33,8 @@
       font-size: 15vw;
       opacity: 0.05;
       font-weight: bold;
+      color: #0077ff;
+      z-index: 0;
       pointer-events: none;
     }
 
@@ -46,22 +47,31 @@
 
     .logo {
       font-size: 3rem;
+      color: #00aaff;
       margin-bottom: 10px;
     }
 
     .slogan {
-      font-size: 1.5rem;
-      margin-bottom: 30px;
+      font-size: 1.8rem;
+      color: #222;
+      margin-bottom: 20px;
+    }
+
+    .desc {
+      font-size: 1.1rem;
+      color: #444;
+      margin: 0 10px;
     }
 
     .btn {
-      background: #00d0ff;
+      background: #007bff;
       color: white;
       padding: 15px 30px;
       font-size: 1rem;
       border: none;
       border-radius: 10px;
       cursor: pointer;
+      margin-top: 25px;
     }
 
     .lang-switch {
@@ -70,31 +80,42 @@
       right: 20px;
     }
 
+    .lang-switch button {
+      font-size: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
     .roadmap-link {
       display: block;
       margin-top: 40px;
-      color: #ffffffcc;
+      font-size: 1rem;
+      color: #007bff;
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <!-- خلفية فيديو ثلاثي الأبعاد -->
+  <!-- خلفية فيديو -->
   <video class="video-bg" autoplay loop muted>
-    <source src="your-3d-video.mp4" type="video/mp4" />
+    <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
   <!-- العلامة المائية -->
   <div class="watermark">LOY</div>
 
-  <!-- محتوى الموقع -->
-  <div class="content" id="mainContent">
+  <!-- المحتوى -->
+  <div class="content">
     <div class="logo">💠 LOY</div>
-    <div class="slogan" id="slogan">The Future of Smart Currency</div>
-    <button class="btn" id="buyBtn">Coming Soon</button>
-    <a href="roadmap.html" class="roadmap-link" id="roadmapLink">View Roadmap</a>
+    <div class="slogan" id="slogan">The AI-Powered Currency of the Future</div>
+    <div class="desc" id="desc">
+      LOY is an innovative digital currency designed to power the next generation of technology and finance.
+    </div>
+    <button class="btn" id="buyBtn">🚀 Coming Soon</button>
+    <a href="roadmap.html" class="roadmap-link" id="roadmapLink">📍 View Roadmap</a>
   </div>
 
   <!-- زر تغيير اللغة -->
@@ -102,22 +123,23 @@
     <button onclick="toggleLang()">🌐</button>
   </div>
 
-  <!-- سكريبت لتبديل اللغة -->
   <script>
     let lang = 'en';
     function toggleLang() {
       if (lang === 'en') {
         lang = 'ar';
         document.documentElement.dir = 'rtl';
-        document.getElementById('slogan').innerText = 'عملة ذكية لمستقبلك';
-        document.getElementById('buyBtn').innerText = 'شراء العملة - قريبًا';
-        document.getElementById('roadmapLink').innerText = 'عرض خارطة الطريق';
+        document.getElementById('slogan').innerText = 'عملة المستقبل المدعومة بالذكاء الاصطناعي';
+        document.getElementById('desc').innerText = 'LOY هي عملة رقمية مبتكرة مصممة لتقود الجيل القادم من التقنية والتمويل.';
+        document.getElementById('buyBtn').innerText = '🚀 شراء العملة - قريبًا';
+        document.getElementById('roadmapLink').innerText = '📍 عرض خارطة الطريق';
       } else {
         lang = 'en';
         document.documentElement.dir = 'ltr';
-        document.getElementById('slogan').innerText = 'The Future of Smart Currency';
-        document.getElementById('buyBtn').innerText = 'Coming Soon';
-        document.getElementById('roadmapLink').innerText = 'View Roadmap';
+        document.getElementById('slogan').innerText = 'The AI-Powered Currency of the Future';
+        document.getElementById('desc').innerText = 'LOY is an innovative digital currency designed to power the next generation of technology and finance.';
+        document.getElementById('buyBtn').innerText = '🚀 Coming Soon';
+        document.getElementById('roadmapLink').innerText = '📍 View Roadmap';
       }
     }
   </script>
