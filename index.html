@@ -2,64 +2,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>LOY Token - عملة لوي</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LOY Token</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
       text-align: center;
-      margin: 50px;
+      padding: 20px;
     }
-    .lang-section {
-      display: none;
-    }
-    .visible {
-      display: block;
-    }
-    .toggle-buttons {
+    .logo {
+      font-size: 32px;
+      font-weight: bold;
+      color: #4CAF50;
       margin-bottom: 20px;
     }
-    button {
-      padding: 10px 20px;
+    .lang-buttons button {
       margin: 5px;
+      padding: 8px 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .buy-button {
+      margin-top: 20px;
+      background-color: #f39c12;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
       font-size: 16px;
+      cursor: not-allowed;
     }
   </style>
 </head>
 <body>
+  <div class="logo">💠 LOY</div>
 
-  <div class="toggle-buttons">
-    <button onclick="toggleLanguage('en')">English</button>
-    <button onclick="toggleLanguage('ar')">العربية</button>
+  <div class="lang-buttons">
+    <button onclick="setLang('en')">English</button>
+    <button onclick="setLang('ar')">العربية</button>
   </div>
 
-  <div id="en" class="lang-section visible">
-    <h1>Welcome to LOY Token</h1>
-    <p>LOY is a digital cryptocurrency project aimed at decentralization and innovation.</p>
-    <ul>
-      <li>Token Information</li>
-      <li>Website Code</li>
-      <li>Future Roadmap</li>
-    </ul>
-  </div>
+  <h2 id="title">Welcome to LOY Token</h2>
+  <p id="desc">LOY is a digital cryptocurrency project aimed at decentralization and innovation.</p>
+  <ul>
+    <li id="info1">Token Information</li>
+    <li id="info2">Website Code</li>
+    <li id="info3">Future Roadmap</li>
+  </ul>
 
-  <div id="ar" class="lang-section">
-    <h1>مرحبًا بك في عملة لوي</h1>
-    <p>لوي هي عملة رقمية تهدف إلى اللامركزية والابتكار.</p>
-    <ul>
-      <li>معلومات العملة</li>
-      <li>كود الموقع</li>
-      <li>خريطة الطريق المستقبلية</li>
-    </ul>
-  </div>
+  <button class="buy-button" disabled>🔒 شراء العملة - قريبًا</button>
 
   <script>
-    function toggleLanguage(lang) {
-      document.getElementById("en").classList.remove("visible");
-      document.getElementById("ar").classList.remove("visible");
-      document.getElementById(lang).classList.add("visible");
+    const en = {
+      title: "Welcome to LOY Token",
+      desc: "LOY is a digital cryptocurrency project aimed at decentralization and innovation.",
+      info1: "Token Information",
+      info2: "Website Code",
+      info3: "Future Roadmap"
+    };
+
+    const ar = {
+      title: "مرحباً بكم في عملة LOY",
+      desc: "LOY هو مشروع عملة رقمية يهدف إلى اللامركزية والابتكار.",
+      info1: "معلومات العملة",
+      info2: "كود الموقع",
+      info3: "خارطة الطريق المستقبلية"
+    };
+
+    function setLang(lang) {
+      const content = lang === 'ar' ? ar : en;
+      document.getElementById('title').innerText = content.title;
+      document.getElementById('desc').innerText = content.desc;
+      document.getElementById('info1').innerText = content.info1;
+      document.getElementById('info2').innerText = content.info2;
+      document.getElementById('info3').innerText = content.info3;
     }
   </script>
-
 </body>
 </html>
