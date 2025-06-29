@@ -1,72 +1,65 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LOY - Your Digital Future</title>
+  <title>LOY Token - عملة لوي</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
+      font-family: sans-serif;
       text-align: center;
-      padding: 20px;
+      margin: 50px;
     }
-    .container {
-      max-width: 700px;
-      margin: auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    .lang-section {
+      display: none;
     }
-    h1 {
-      color: #0066cc;
+    .visible {
+      display: block;
     }
-    .lang-switch {
-      margin-top: 20px;
+    .toggle-buttons {
+      margin-bottom: 20px;
     }
     button {
+      padding: 10px 20px;
       margin: 5px;
-      padding: 8px 16px;
-      border: none;
-      background-color: #0066cc;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1 id="title">LOY - The Future of Digital Currency</h1>
-    <p id="desc">
-      LOY is a community-driven cryptocurrency designed for secure, fast, and borderless transactions.
-    </p>
 
-    <div class="lang-switch">
-      <button onclick="setLang('en')">English</button>
-      <button onclick="setLang('ar')">العربية</button>
-    </div>
+  <div class="toggle-buttons">
+    <button onclick="toggleLanguage('en')">English</button>
+    <button onclick="toggleLanguage('ar')">العربية</button>
+  </div>
+
+  <div id="en" class="lang-section visible">
+    <h1>Welcome to LOY Token</h1>
+    <p>LOY is a digital cryptocurrency project aimed at decentralization and innovation.</p>
+    <ul>
+      <li>Token Information</li>
+      <li>Website Code</li>
+      <li>Future Roadmap</li>
+    </ul>
+  </div>
+
+  <div id="ar" class="lang-section">
+    <h1>مرحبًا بك في عملة لوي</h1>
+    <p>لوي هي عملة رقمية تهدف إلى اللامركزية والابتكار.</p>
+    <ul>
+      <li>معلومات العملة</li>
+      <li>كود الموقع</li>
+      <li>خريطة الطريق المستقبلية</li>
+    </ul>
   </div>
 
   <script>
-    const content = {
-      en: {
-        title: "LOY - The Future of Digital Currency",
-        desc: "LOY is a community-driven cryptocurrency designed for secure, fast, and borderless transactions."
-      },
-      ar: {
-        title: "عملة LOY - مستقبل العملات الرقمية",
-        desc: "عملة LOY هي عملة مشفرة يقودها المجتمع، مصممة لتوفير معاملات آمنة وسريعة وعابرة للحدود."
-      }
-    };
-
-    function setLang(lang) {
-      document.getElementById('title').innerText = content[lang].title;
-      document.getElementById('desc').innerText = content[lang].desc;
-      document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    function toggleLanguage(lang) {
+      document.getElementById("en").classList.remove("visible");
+      document.getElementById("ar").classList.remove("visible");
+      document.getElementById(lang).classList.add("visible");
     }
   </script>
+
 </body>
 </html>
